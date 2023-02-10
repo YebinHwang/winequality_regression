@@ -19,6 +19,8 @@
    "- quality (score between 0 and 10)
    
 ## Simple Linear Regression
+> **build own Linear Regression Class**
+
 **Simple linear regression** is a special case when there is only one explanatory variable $X$. In this case, the relation can be represented quantitatively by:
 $$
 Y = \beta_0 + \beta_1X + \epsilon
