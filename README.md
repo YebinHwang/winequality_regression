@@ -1,4 +1,4 @@
-# Regression Model on predicting Wine Quality
+# Regression Model to predict Wine Quality
 
 ## Data Explanation
 **Wine quality inspection with input vairables below**
