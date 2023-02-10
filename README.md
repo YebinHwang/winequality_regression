@@ -39,3 +39,15 @@ $$
   - $R^2 =1$ indicates that the regression line perfectly fits the data
   - $R^2 = 0$ indicates that the line does not fit the data at all 
 - A common approach is to split the dataset into training and testing. We then train the model only use the training set and evaluate it on the test set.
+
+
+### 3) Regularized Regression: Ridge and Lasso
+The difference between regularized regression and normal linear regression is the **cost function**.
+Since the penality term is NOT a smooth function, there is no closed form solution to Lasso model's slope coefficients. I will use **gradient** to find the best weights.
+
+#### **Gradient Descent**
+  - initialize the weights of the linear model as small values, say $\beta^0$
+  - for `i` in `1:n_iterations`:
+    - Calculate the cost: $RSS(\beta^i) = (y-X\beta^i)^T(y-X\beta^i)$
+    - Calculate the gradient: $\nabla=\frac{\partial RSS}{\partial\beta^i} = -2X^T(y-X\beta^i)$
+    - Update the value of $\beta$ by multiplying the gradient with a learning rate: $\beta^{i+1} = \beta^i - \eta\nabla$
