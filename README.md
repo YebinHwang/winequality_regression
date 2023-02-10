@@ -45,9 +45,16 @@ $$
 The difference between regularized regression and normal linear regression is the **cost function**.
 Since the penality term is NOT a smooth function, there is no closed form solution to Lasso model's slope coefficients. I will use **gradient** to find the best weights.
 
+### 3-1) Lasso Regression
 #### **Gradient Descent**
-  - initialize the weights of the linear model as small values, say $\beta^0$
+  - Initialized the weights of the linear model as small values, say $\beta^0$
   - for `i` in `1:n_iterations`:
-    - Calculate the cost: $RSS(\beta^i) = (y-X\beta^i)^T(y-X\beta^i)$
-    - Calculate the gradient: $\nabla=\frac{\partial RSS}{\partial\beta^i} = -2X^T(y-X\beta^i)$
-    - Update the value of $\beta$ by multiplying the gradient with a learning rate: $\beta^{i+1} = \beta^i - \eta\nabla$
+    - Calculated the cost: $RSS(\beta^i) = (y-X\beta^i)^T(y-X\beta^i)$
+    - Calculated the gradient: $\nabla=\frac{\partial RSS}{\partial\beta^i} = -2X^T(y-X\beta^i)$
+    - Updated the value of $\beta$ by multiplying the gradient with a learning rate: $\beta^{i+1} = \beta^i - \eta\nabla$
+
+### 3-2) Ridge Regression
+- Difference between ridge and lasso is the **regularization term**
+  - $Cost = (y−X\beta)^T(y−X\beta)+\lambda\beta^T\beta$
+  - Ridge uses L2 norm (squared) and Lasso uses L1 norm.
+- Created a general regression class with ridge and lasso to be the subclasses
